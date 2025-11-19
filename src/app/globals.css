@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
+@theme {
+  --font-mono: var(--font-mono);
+  --font-sans: var(--font-sans);
+  
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Paleta "Java Dark IDE" - Inspirada em temas premium de VSCode */
+  --background: 224 71% 4%; /* #030712 (Very Dark Blue) */
+  --foreground: 210 40% 98%;
+
+  --card: 222 47% 11%; /* Um tom acima do fundo para cards */
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222 47% 11%;
+  --popover-foreground: 210 40% 98%;
+
+  /* O Azul/Roxo da turma, mas elétrico para contraste no escuro */
+  --primary: 250 100% 70%; /* #9F7AEA (Roxo Java Moderno) */
+  --primary-foreground: 222 47% 11%;
+
+  --secondary: 217 19% 27%; /* Cinza azulado para botões secundários */
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217 19% 27%;
+  --muted-foreground: 215 20.2% 65.1%;
+
+  --accent: 250 100% 70%; /* Mesma da primária para consistência */
+  --accent-foreground: 222 47% 11%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217 19% 27%; /* Bordas sutis mas visíveis */
+  --input: 217 19% 27%;
+  --ring: 250 100% 70%;
+
+  --radius: 0.3rem; /* Bordas menos arredondadas = Mais técnico/sério */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  /* Títulos sempre em Mono para identidade tech */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-mono tracking-tight;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Efeito de "Scanline" sutil ou brilho de terminal (Opcional, dá um charme premium) */
+.glow-text {
+  text-shadow: 0 0 20px rgba(159, 122, 234, 0.3);
 }
