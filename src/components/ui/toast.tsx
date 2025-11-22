@@ -6,7 +6,7 @@ import { X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 // Exporta o tipo de elemento de ação para uso no hook
-export type ToastActionElement = React.ElementRef<typeof ToastAction>
+export type ToastActionElement = React.ReactElement<typeof ToastAction>
 
 const ToastProvider = ToastPrimitives.Provider
 
