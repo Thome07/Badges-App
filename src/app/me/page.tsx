@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { User } from '@/types/index';
+import { User } from '@src/types/index.ts';
 import Link from 'next/link';
 import { ArrowLeft, Code2, Terminal } from 'lucide-react';
 
